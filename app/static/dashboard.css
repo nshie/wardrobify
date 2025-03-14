@@ -1,0 +1,65 @@
+#sensor-data {
+    display: flex;
+    gap: 16px;
+}
+
+#weather-data {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sensor {
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    min-width: 480px;
+}
+
+.chart-container {
+    width: 100%;
+}
+
+#ai-prompt-section {
+    padding: 24px 0;
+}
+
+#ai-prompt-button {
+    border-radius: 16px;
+    background-color: rgb(5, 35, 69);
+    padding: 16px;
+    border: none;
+    color: white;
+    font: bolder;
+    font-size: large;
+    border: 2px solid rgb(5, 35, 69);
+    cursor: pointer;
+}
+
+#ai-prompt-button:hover {
+    border-radius: 16px;
+    padding: 16px;
+    background-color: rgb(5, 67, 138);
+    border: 2px solid rgb(5, 35, 69);
+}
+
+.card h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    padding: 24px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    min-width: 480px;
+    margin: 16px 0;
+}

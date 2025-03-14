@@ -1,0 +1,7 @@
+.env
+*.venv*
+/data/*
+!/data/.gitkeep
+*.code-workspace
+*.env
+__pycache__

@@ -1,0 +1,55 @@
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+#form div {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 24px 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    font-size: large;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+#brand {
+    min-height: 60px;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+#submit {
+    border-radius: 24px;
+}
+
+#main {
+    max-width: 1024px;
+    margin: auto;
+}
+
+#card {
+    border-radius: 12px;
+    width: 300px;
+    padding: 0 60px;
+    border: 1px solid black;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#other {
+    padding: 0 0 32px 0;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}

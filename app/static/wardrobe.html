@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/wardrobe.css">
+    <link rel="stylesheet" href="/static/main.css">
+    <title>Wardrobe</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="navbar-wrapper" class="wrapper">
+            <div>
+                <h2>Wardrobify</h2>
+            </div>
+            <ul id="navbar-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li class="active"><a href="/wardrobe">Wardrobe</a></li>
+                <li><a href="/profile/{username}">Profile</a></li>
+                <li><button onclick="
+                fetch('/logout', {method: 'POST'})
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                    }
+                })">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="wardrobe">
+            <h1>Wardrobe</h1>
+            <div id="wardrobe-data">
+                
+            </div>
+            <div id="add-clothes">
+                <h3>Add Clothes</h3>
+                <form id="add-clothes-form">
+                    <input type="text" id="new-clothes-name" placeholder="Name" requied>                    
+                    <input type="text" id="new-clothes-type" placeholder="Type" required>
+                    <input type="text" id="new-clothes-image-address" placeholder="Image Address" required>
+                    <input type="submit" id="submit-clothes" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="/static/wardrobe.js"></script>
+</body>
+</html>

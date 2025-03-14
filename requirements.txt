@@ -1,0 +1,10 @@
+fastapi
+pydantic
+uvicorn[standard]
+websockets
+mysql-connector-python
+pandas
+python-dotenv
+asyncio
+requests
+geopy

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="/static/main.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="navbar-wrapper" class="wrapper">
+            <div id="logo">
+                <h2>Wardrobify</h2>
+            </div>
+            <ul id="navbar-links">
+                <li class="active"><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/wardrobe">Wardrobe</a></li>
+                <li><a href="/profile/{username}">Profile</a></li>
+                <li><button onclick="
+                fetch('/logout', {method: 'POST'})
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                    }
+                })">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div>
+            <h1>Hello, {username}!</h1>
+        </div>
+        <section id="sensors">
+            <h1>Sensor Data</h1>
+            <div id="sensor-data">
+                
+            </div>
+        </section>
+        <section id="weather" class="card">
+            <h1>Weather Data</h1>
+            <div id="weather-data">
+
+            </div>
+        </section>
+        <section id="ai-prompt-section">
+            <button id="ai-prompt-button">What should I wear?</button>
+            <div id="ai-recommendation">
+
+            </div>
+        </section>
+    </main>
+    <script src="/static/dashboard.js"></script>
+</body>
+</html>

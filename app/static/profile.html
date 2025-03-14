@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/profile.css">
+    <link rel="stylesheet" href="/static/main.css">
+    <title>Profile</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="navbar-wrapper" class="wrapper">
+            <div>
+                <h2>Wardrobify</h2>
+            </div>
+            <ul id="navbar-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/wardrobe">Wardrobe</a></li>
+                <li class="active"><a href="/profile/{username}">Profile</a></li>
+                <li><button onclick="
+                fetch('/logout', {method: 'POST'})
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                    }
+                })">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="sensors">
+            <h1>Sensors</h1>
+            <div id="sensor-data">
+                
+            </div>
+            <div id="add-sensor">
+                <h3>Add Sensor</h3>
+                <form id="add-sensor-form">
+                    <select id="new-sensor-type">
+                        <option value="Temperature">Temperature</option>
+                        <option value="Pressure">Pressure</option>
+                    </select>
+                    <input type="text" id="new-sensor-units" placeholder="Units" required>
+                    <input type="text" id="new-sensor-address" placeholder="Address" requied>
+                    <input type="submit" id="submit-sensor" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="/static/profile.js"></script>
+</body>
+</html>

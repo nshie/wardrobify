@@ -1,0 +1,24 @@
+#sensor-data {
+    display: flex;
+    gap: 16px;
+}
+
+.sensor {
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    min-width: 220px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
