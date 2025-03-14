@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException, WebSocket
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
+from starlette.websockets import WebSocketState
 from typing import Optional
 from pydantic import BaseModel
 from contextlib import asynccontextmanager
@@ -122,7 +123,8 @@ async def websocket_endpoint(websocket: WebSocket):
     except Exception as e:
         print(e)
     finally:
-        await websocket.close()
+        if websocket.client_state == WebSocketState.CONNECTED:
+            await websocket.close()
     return
 
 

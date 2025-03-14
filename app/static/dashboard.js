@@ -1,6 +1,6 @@
 // Dashboard data loading and displaying
 
-const ws = new WebSocket('ws://localhost:8000/ws');
+const ws = new WebSocket('wss://' + location.host + '/ws');
 
 loadWeatherData();
 
@@ -145,7 +145,7 @@ function loadWeatherData() {
 }
 
 async function fetchWeather() {
-  const userLocation = await fetch('http://localhost:8000/api/user').then(res => res.json()).then(user => user.location);
+  const userLocation = await fetch('/api/user').then(res => res.json()).then(user => user.location);
 
   const location = await fetch(`https://nominatim.openstreetmap.org/search?q=${userLocation.replace(' ', '%20')}&format=json`)
     .then(res => res.json())

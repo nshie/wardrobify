@@ -92,8 +92,6 @@ function removeClothes(id) {
 }
 
 function editClothes(id, new_name, new_type, new_image_address) {
-  console.log("fjdkls;af");
-  
   const requestBody = {
     name: new_name,
     type: new_type,
