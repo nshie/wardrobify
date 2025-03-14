@@ -1,6 +1,6 @@
 // Dashboard data loading and displaying
 
-const ws = new WebSocket('ws://localhost:8000/ws');
+const ws = new WebSocket('wss://' + location.host + '/ws');
 
 loadWeatherData();
 
